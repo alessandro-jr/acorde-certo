@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acorde Certo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Acorde Certo</h1>
+            <img src="logo-acordecerto.png" alt="Logo Acorde Certo">
+        </header>
+        <p>Descubra os melhores horários para acordar e maximizar seu descanso.</p>
+
+        <main>
+            <section class="sleep-calculator">
+                <h2>Calcule seus horários ideais de despertar</h2>
+                <form id="sleep-form" onsubmit="event.preventDefault(); calculateWakeTimes();">
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" id="age" min="0" max="150" placeholder="Ex: 25" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sleep-time">Horário que você vai dormir:</label>
+                        <div class="time-input">
+                            <input type="number" id="sleep-hours" name="sleep-hours" min="0" max="23" placeholder="HH" required>
+                            <span class="separator">:</span>
+                            <input type="number" id="sleep-minutes" name="sleep-minutes" min="0" max="59" placeholder="MM" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fall-asleep-time">Tempo médio para adormecer (minutos):</label>
+                        <div class="time-input">
+                            <input type="number" id="fall-asleep-time" min="0" placeholder="Ex: 15" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wake-time">Horário que você pretende acordar:</label>
+                        <div class="time-input">
+                            <input type="number" id="wake-hours" name="wake-hours" min="0" max="23" placeholder="HH" required>
+                            <span class="separator">:</span>
+                            <input type="number" id="wake-minutes" name="wake-minutes" min="0" max="59" placeholder="MM" required>
+                        </div>
+                    </div>
+
+                    <button type="submit">Calcular</button>
+                </form>
+
+                <h2 id="results-heading" style="display: none;">Melhores horários para acordar:</h2>
+                <p id="sleep-recommendation" style="display: none;"></p>
+                <ul id="results">
+                    <!-- Resultados serão exibidos aqui -->
+                </ul>
+            </section>
+
+            <section class="sleep-info">
+                <h2>Como funcionam os ciclos de sono?</h2>
+                <p>O sono é composto por ciclos de aproximadamente 90 minutos. Cada ciclo inclui várias fases, desde o sono leve até o sono REM (Rapid Eye Movement), que é a fase mais profunda e onde ocorrem os sonhos.</p>
+                <p>É importante acordar ao final de um ciclo para evitar a sensação de cansaço. Essa calculadora te ajuda a determinar os melhores horários para despertar, garantindo que você acorde no final de um ciclo completo e se sinta mais descansado.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Acorde Certo. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

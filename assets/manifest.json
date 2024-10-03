@@ -14,7 +14,7 @@
         "type": "image/png"
       }
     ],
-    "start_url": "/index.html",
+    "start_url": "/acorde-certo/index.html",
     "display": "standalone",
     "theme_color": "#333333",
     "background_color": "#333333"

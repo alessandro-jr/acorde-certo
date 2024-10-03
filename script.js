@@ -19,12 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('wake-hours'),
         document.getElementById('wake-minutes')
     ];
-
     timeInputs.forEach(input => limitInputLength(input, 2));
 
     // Limitar o tempo para adormecer a 3 caracteres
     limitInputLength(document.getElementById('fall-asleep-time'), 3);
+
+    // Carregar valores do cache (localStorage) se existirem
+    loadFromCache();
 });
+
+// Função para carregar dados do localStorage
+function loadFromCache() {
+    const savedAge = localStorage.getItem('age');
+    const savedFallAsleepTime = localStorage.getItem('fallAsleepTime');
+
+    if (savedAge) {
+        document.getElementById('age').value = savedAge;
+    }
+
+    if (savedFallAsleepTime) {
+        document.getElementById('fall-asleep-time').value = savedFallAsleepTime;
+    }
+}
 
 function calculateWakeTimes() {
     const ageInput = parseInt(document.getElementById('age').value);
@@ -36,6 +52,10 @@ function calculateWakeTimes() {
     const resultsList = document.getElementById('results');
     const resultsHeading = document.getElementById('results-heading');
     const sleepRecommendation = document.getElementById('sleep-recommendation');
+
+    // Salvar idade e tempo médio para adormecer no localStorage
+    localStorage.setItem('age', ageInput);
+    localStorage.setItem('fallAsleepTime', fallAsleepTimeInput);
 
     // Limpa os resultados anteriores
     resultsList.innerHTML = '';
@@ -57,7 +77,7 @@ function calculateWakeTimes() {
         alert('Por favor, insira um horário válido para acordar!');
         return;
     }
-
+    
     // Tabela de horas ideais por idade
     const sleepNeeds = [
         { min: 0, max: 3, idealMin: 14, idealMax: 17 },

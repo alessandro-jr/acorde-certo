@@ -35,27 +35,61 @@ body {
     height: auto; /* Permite crescimento */
     overflow: hidden; /* Impede cortes inesperados */
 }
-
-/* Estilo do cabeçalho */
-header {
-    display: flex; /* Usar flex para alinhamento horizontal */
-    align-items: center; /* Alinha itens verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-bottom: 20px; /* Espaçamento inferior */
+/* Estilo do menu de navegação */
+.navbar {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px; /* Espaço abaixo do menu */
 }
 
-/* Título principal */
-header h1 {
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.navbar ul li {
+    margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f1c40f; /* Cor ao passar o mouse */
+}
+
+/* Estilo geral do cabeçalho */
+header {
+    display: flex;
+    flex-direction: column; /* Alinha verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    margin-bottom: 20px; /* Espaço inferior */
+}
+
+/* Ajusta o conteúdo do cabeçalho para alinhar o título e a logo */
+.header-content {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.header-content h1 {
     font-size: 2.5rem;
     color: #ffffff;
-    margin: 0;
+    margin: 0 15px 0 0; /* Espaçamento entre o título e a logo */
 }
 
-/* Logo ao lado do título */
-header img {
-    width: 60px; /* Ajustar tamanho da logo */
-    height: auto; /* Mantém proporção */
-    margin-left: 15px; /* Espaçamento à esquerda do título */
+.header-content img {
+    width: 60px;
+    height: auto;
 }
 
 /* Subtítulos */
@@ -259,4 +293,70 @@ footer {
     .legend-item {
         font-size: 0.9rem; /* Reduzir o tamanho da fonte na legenda */
     }
+}
+
+
+/* Estilo específico para a página de dicas */
+.tips-section {
+    margin-top: 20px;
+}
+
+.tips-section h2 {
+    font-size: 2rem;
+    color: #f8f8f8;
+    margin-bottom: 20px;
+}
+
+/* Lista de dicas */
+.tips-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.tips-list li {
+    background-color: #444;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.tips-list li strong {
+    color: #76ff03; /* Destaque do número e título */
+}
+
+/* Ajuste o container para acomodar melhor o conteúdo */
+.container {
+    max-width: 700px; /* Aumenta o tamanho do container para as dicas */
+    width: 100%;
+    margin: 20px auto; /* Centraliza a página */
+}
+
+
+/* Estilos dos botões */
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-button {
+    display: inline-block;
+    background-color: #1e88e5;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px;
+}
+
+.form-button:hover {
+    background-color: #1565c0;
 }

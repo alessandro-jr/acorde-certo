@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333333">
+
+    <!-- Para dispositivos Apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicons para diferentes dispositivos -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="assets/manifest.json">
+    
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Calculadora | Acorde Certo</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="dicas.html">Dicas</a></li>
+                    <li><a href="pesquisas.html">Pesquisas</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-content">
+                <h1>Calculadora de Ciclos de Sono</h1>
+            </div>
+        </header>
+        <!-- Botão Limpar Alarme fora do formulário -->
+    <div class="alarme-salvo">
+        <p id="horario-salvo" style="display: none;">Horário salvo: <span id="horario-alarme"></span></p>
+        <button id="limpar-alarme" style="display: none;">Limpar Alarme</button>
+    </div>
+        <main>
+            <section class="sleep-calculator">
+                <p class="intro-text">Descubra os melhores horários para acordar e maximizar seu descanso.</p>
+        
+                <form id="sleep-form" onsubmit="event.preventDefault(); calculateWakeTimes();">
+                    <!-- Campo para Idade -->
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" id="age" min="0" max="150" placeholder="25" required>
+                    </div>
+
+                    <!-- Campo para Horário de Dormir -->
+                    <div class="form-group">
+                        <label for="sleep-time">Horário que você vai dormir:</label>
+                        <div class="time-input">
+                            <input type="number" id="sleep-hours" name="sleep-hours" min="0" max="23" placeholder="HH" required>
+                            <span class="separator">:</span>
+                            <input type="number" id="sleep-minutes" name="sleep-minutes" min="0" max="59" placeholder="MM" required>
+                        </div>
+                    </div>
+
+                    <!-- Tempo Médio para Adormecer -->
+                    <div class="form-group">
+                        <label for="fall-asleep-time">Tempo médio para adormecer (minutos):</label>
+                        <input type="number" id="fall-asleep-time" min="0" placeholder="15" required>
+                    </div>
+
+                    <!-- Campo para Horário de Acordar -->
+                    <div class="form-group">
+                        <label for="wake-time">Horário que você pretende acordar:</label>
+                        <div class="time-input">
+                            <input type="number" id="wake-hours" name="wake-hours" min="0" max="23" placeholder="HH" required>
+                            <span class="separator">:</span>
+                            <input type="number" id="wake-minutes" name="wake-minutes" min="0" max="59" placeholder="MM" required>
+                        </div>
+                    </div>
+
+                    <button type="submit">Calcular</button>
+                </form>
+                <p id="sleep-recommendation" style="display: none;"></p>
+
+                <!-- Resultados e Opções de Configuração -->
+                <div class="alarme-config" style="display: none;">
+                    <h3>Selecione um horário:</h3>
+                    <!-- Aqui será gerada a lista dos horários -->
+                    <ul id="results"></ul> <!-- Lista gerada dinamicamente -->
+                    <div id="escolher-horario"></div> <!-- Horário será escolhido -->
+
+                    <!-- Repetição de Alarme -->
+                    <h3>Repetir alarme:</h3>
+                    <select id="dias-semana">
+                        <option value="todos-dias">Todos os Dias</option>
+                        <option value="dias-semana">Dias da Semana</option>
+                    </select>
+                    
+                    <audio id="alarm-sound" src="assets/audio/alarm.mp3" preload="auto"></audio>
+                    <button id="salvar-alarme" style="margin-top: 15px;">Salvar Alarme</button>
+                </div> <!-- Fim da alarme-config -->
+
+                <!-- Legenda dos resultados -->
+                <div id="legend-container"></div> <!-- Container da legenda que será gerado dinamicamente -->
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Acorde Certo. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Link para o JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

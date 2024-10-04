@@ -1,4 +1,4 @@
-/* Reseta o estilo padrão do navegador */
+/* Resetando o estilo padrão do navegador */
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +8,16 @@
 /* Estilo geral do body para centralizar o conteúdo */
 body {
     font-family: Arial, sans-serif;
-    background-color: #333; /* Fundo neutro e escuro */
+    background-color: #333; /* Fundo escuro */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha o conteúdo no topo */
-    height: auto; /* Permite que o body cresça com o conteúdo */
-    overflow-x: hidden; /* Remove rolagem horizontal */
-    overflow-y: scroll; /* Garante rolagem vertical */
-    padding-bottom: 80px; /* Espaço extra no final para evitar cortes */
+    align-items: flex-start; /* Alinhamento ao topo */
+    min-height: 100vh; /* Garante altura total */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 80px;
     margin: 0;
-    color: #e0e0e0; /* Cor do texto neutra */
+    color: #e0e0e0;
 }
 
 /* Container principal */
@@ -25,37 +25,33 @@ body {
     background: rgba(0, 0, 0, 0.85); /* Fundo semi-transparente */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
-    max-width: 600px; /* Largura máxima para o conteúdo */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    max-width: 600px;
     width: 100%;
-    margin: 20px; /* Espaçamento ao redor */
-    margin-bottom: 250px;
-    text-align: center; /* Centraliza o texto no container */
-    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da viewport */
-    height: auto; /* Permite crescimento */
-    overflow: hidden; /* Impede cortes inesperados */
+    margin: 20px auto;
+    text-align: center;
 }
+
 /* Estilo do menu de navegação */
 .navbar {
     width: 100%;
     text-align: center;
-    margin-bottom: 15px; /* Espaço abaixo do menu */
+    margin-bottom: 15px;
 }
 
 .navbar ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-}
-
-.navbar ul li {
-    margin: 0 20px; /* Espaçamento entre os itens */
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar ul li a {
     text-decoration: none;
+    background-color: #444;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
@@ -63,28 +59,27 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #f1c40f; /* Cor ao passar o mouse */
+    color: #f1c40f;
 }
 
-/* Estilo geral do cabeçalho */
+/* Cabeçalho */
 header {
     display: flex;
-    flex-direction: column; /* Alinha verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    margin-bottom: 20px; /* Espaço inferior */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Ajusta o conteúdo do cabeçalho para alinhar o título e a logo */
 .header-content {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    justify-content: center;
 }
 
 .header-content h1 {
     font-size: 2.5rem;
-    color: #ffffff;
-    margin: 0 15px 0 0; /* Espaçamento entre o título e a logo */
+    color: #fff;
+    margin-right: 15px;
 }
 
 .header-content img {
@@ -102,200 +97,197 @@ h2 {
 /* Parágrafos */
 p {
     font-size: 1.1rem;
-    line-height: 1.6; /* Espaçamento entre linhas */
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* Formulário de entrada */
+/* Formulário */
 .form-group {
-    margin-bottom: 20px; /* Espaço inferior entre grupos */
+    margin-bottom: 20px;
 }
 
-/* Rótulo dos inputs */
 .form-group label {
-    display: block; /* O rótulo ocupa toda a largura */
+    display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #f1f1f1; /* Cor do rótulo */
+    color: #f1f1f1;
 }
 
-/* Inputs do formulário */
 .form-group input {
-    width: 4rem; /* Largura reduzida */
+    width: 4rem;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3); /* Fundo semi-transparente */
-    color: #000; /* Cor do texto */
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
     font-size: 1rem;
-    text-align: center; /* Centraliza o texto */
-}
-
-/* Input de idade */
-#age {
-    width: 4rem; /* Largura reduzida */
-}
-
-/* Entrada de tempo */
-.time-input {
-    display: flex; /* Usar flex para alinhamento */
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Inputs de tempo */
-.time-input input {
-    width: 4rem; /* Largura reduzida */
-    margin: 0 5px;
+.time-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-/* Separador de tempo */
-.time-input .separator {
-    color: #ffffff; /* Cor do separador */
-}
-
-/* Botão de ação */
+/* Botões */
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #1e88e5; /* Azul do botão */
-    color: #fff; /* Cor do texto do botão */
+    background-color: #1e88e5;
+    color: #fff;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-/* Efeito hover no botão */
 button:hover {
-    background-color: #1565c0; /* Azul mais escuro no hover */
-}
-
-/* Informações sobre o sono */
-.sleep-info {
-    margin-top: 30px;
+    background-color: #1565c0;
 }
 
 /* Lista de resultados */
 ul {
-    list-style-type: none; /* Remove os marcadores padrão */
+    list-style: none;
     padding: 0;
     margin-top: 20px;
 }
 
-/* Itens da lista de resultados */
-ul li {
-    background-color: #444; /* Fundo dos itens */
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    color: #76ff03; /* Verde claro para texto */
-    font-size: 1.1rem;
+/* Estilo para os itens de resultado */
+.result-item {
     display: flex;
     align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
 }
 
-/* Estilo do indicador de qualidade */
+.result-item input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Bolinhas dos indicadores */
 .indicator {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    margin-right: 10px; /* Espaço ao lado do indicador */
 }
 
-/* Cores dos indicadores */
-.green {
-    background-color: #2ecc71; /* Cor verde */
-}
+/* Indicadores de cor */
+.indicator.green { background-color: green; }
+.indicator.yellow { background-color: yellow; }
+.indicator.orange { background-color: orange; }
+.indicator.red { background-color: red; }
 
-.yellow {
-    background-color: #f1c40f; /* Cor amarela */
-}
-
-.orange {
-    background-color: #e67e22; /* Cor laranja */
-}
-
-.red {
-    background-color: #e74c3c; /* Cor vermelha */
-}
-
-/* Legenda dos indicadores */
+/* Legenda */
 .legend {
     margin-top: 20px;
-    text-align: left;
-    color: #fff;
+    text-align: center;
 }
 
-/* Título da legenda */
 .legend h3 {
     margin-bottom: 15px;
 }
 
-/* Itens da legenda */
+/* Estilos para cada item da legenda */
 .legend-item {
-    display: flex; /* Flex para alinhamento */
-    align-items: center;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Alinha os itens da legenda verticalmente */
+    margin-bottom: 10px; /* Espaçamento entre os itens da legenda */
 }
 
-/* Bolinhas da legenda */
+/* Bolinhas de cores na legenda */
 .legend-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 10px; /* Espaço ao lado da bolinha */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Deixa as bolinhas circulares */
+    margin-right: 10px; /* Espaço entre a bolinha e o texto */
 }
 
-/* Texto ao lado das bolinhas */
+/* Cores das bolinhas da legenda */
+.legend-color.green { background-color: green; }
+.legend-color.yellow { background-color: yellow; }
+.legend-color.orange { background-color: orange; }
+.legend-color.red { background-color: red; }
+
 .legend-item p {
     margin: 0;
-    line-height: 20px; /* Alinhamento vertical */
+    font-size: 1rem;
+    color: #e0e0e0; /* Cor do texto da legenda */
 }
 
-/* Rodapé */
+/* Estilo do rodapé */
 footer {
     margin-top: 20px;
-    margin-bottom: 80px; /* Espaço extra no rodapé */
     font-size: 0.9rem;
     color: #aaa;
+}
+
+
+
+/* Estilo do botão salvar alarme */
+#salvar-alarme {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#salvar-alarme:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do botão limpar alarme */
+#limpar-alarme {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#limpar-alarme:hover {
+    background-color: darkred;
 }
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .container {
-        padding: 20px; /* Reduzir padding em telas menores */
+        padding: 20px;
     }
 
-    header h1 {
-        font-size: 2rem; /* Reduzir o tamanho do título */
+    h1 {
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.5rem; /* Reduzir o tamanho dos subtítulos */
+        font-size: 1.5rem;
     }
 
     button {
-        width: 100%; /* Botão ocupar toda a largura */
-        padding: 10px; /* Ajuste de padding */
+        width: 100%;
+        padding: 10px;
     }
 
     .form-group input {
-        width: 3rem; /* Ajuste a largura dos inputs */
+        width: 3rem;
     }
 
     .time-input input {
-        width: 3rem; /* Ajuste a largura dos inputs de tempo */
+        width: 3rem;
     }
 
     .legend-item {
-        font-size: 0.9rem; /* Reduzir o tamanho da fonte na legenda */
+        font-size: 0.9rem;
     }
 }
-
-
 /* Estilo específico para a página de dicas */
 .tips-section {
     margin-top: 20px;

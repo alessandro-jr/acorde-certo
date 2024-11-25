@@ -287,6 +287,31 @@ footer {
     .legend-item {
         font-size: 0.9rem;
     }
+
+/* Ajustes para os botões na barra de navegação */
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em linhas */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.navbar ul li {
+    flex: 1 1 calc(50% - 20px); /* Cada botão ocupa metade da largura menos o gap */
+    text-align: center;
+}
+
+.navbar ul li a {
+    font-size: 1rem; /* Tamanho ajustado para mobile */
+    padding: 10px 20px; /* Área de clique maior */
+    background-color: #444; /* Fundo consistente */
+    color: #fff;
+    text-align: center;
+    border-radius: 10px; /* Cantos arredondados */
+    display: block; /* Garante que o botão ocupe o espaço completo do li */
+    width: 100%; /* Alinha com o flex */
+}
+
 }
 /* Estilo específico para a página de dicas */
 .tips-section {
